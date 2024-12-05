@@ -1,5 +1,5 @@
 // Replace with your Spotify app credentials and token-handling logic
-const CLIENT_ID = "<2464cdec15494405943465280fe5849e>";
+const CLIENT_ID = "2464cdec15494405943465280fe5849e";
 const REDIRECT_URI = "https://nectarine0.github.io"; // Replace with your redirect URI
 
 let accessToken;
