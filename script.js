@@ -49,13 +49,16 @@ async function createPlaylist(mood) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: `${mood.charAt(0).toUpperCase() + mood.slice(1)} Mood Playlist`,
+        name: `${mood.charAt(0).toUpperCase() + mood.slice(1)} Playlist`,
         description: `A playlist for when you're feeling ${mood}`,
-        public: true,
+        public: false,
       }),
     }
   );
-
+  const playlistData = playlistResponse.json();
+  const playlistID = playlistData.id;
+  const embedUrl = `https://open.spotify.com/embed/playlist/${playlistId}`;
+  document.getElementById("spotify-embed").src = embedUrl;
   return await playlistResponse.json();
 }
 
